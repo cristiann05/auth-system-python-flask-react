@@ -1,0 +1,154 @@
+/* Base layout */
+.signin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/f562aaf4-5dbb-4603-a32b-6ef6c2230136/dh0w8qv-9d8ee6b2-b41a-4681-ab9b-8a227560dc75.jpg/v1/fill/w_1192,h_670,q_70,strp/the_netflix_login_background__canada__2024___by_logofeveryt_dh0w8qv-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzIwIiwicGF0aCI6IlwvZlwvZjU2MmFhZjQtNWRiYi00NjAzLWEzMmItNmVmNmMyMjMwMTM2XC9kaDB3OHF2LTlkOGVlNmIyLWI0MWEtNDY4MS1hYjliLThhMjI3NTYwZGM3NS5qcGciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.LOYKSxIDqfPwWHR0SSJ-ugGQ6bECF0yO6Cmc0F26CQs') no-repeat center center;
+  background-size: cover;
+  position: relative; /* Necesario para que el pseudo-elemento se posicione correctamente */
+}
+
+/* Añadir una capa de color negro semitransparente sobre la imagen de fondo */
+.signin::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Negro con 40% de opacidad */
+  z-index: 1; /* Asegura que el overlay esté encima de la imagen */
+}
+
+/* Asegurarse de que el contenedor del formulario esté por encima del overlay */
+.signin-container {
+  background: rgba(0, 0, 0, 0.85); /* Fondo oscuro con 85% de opacidad */
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Sombra más suave */
+  width: 100%;
+  max-width: 400px;
+  position: relative; /* Necesario para que el contenedor esté por encima del overlay */
+  z-index: 2; /* Asegura que el contenedor del formulario esté por encima del overlay */
+}
+
+.signin-container h1 {
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff; /* Asegura que el texto sea visible */
+}
+
+.input-group {
+  margin-bottom: 1rem;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #ddd; /* Color claro para mejor legibilidad */
+}
+
+.input-group input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #444; /* Ligeramente más claro para mejor visibilidad */
+  border-radius: 4px;
+  background: #333; /* Fondo oscuro para los campos de entrada */
+  color: #fff; /* Texto blanco para mejor legibilidad */
+  font-size: 1rem;
+}
+
+button {
+  width: 100%;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #e50914;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-top: 1rem; /* Añade espacio entre campos de entrada y botón */
+}
+
+button:hover {
+  background-color: #f40612;
+}
+
+.signup-link {
+  margin-top: 1rem;
+  text-align: center;
+  color: #fff;
+}
+
+.signup-redirect {
+  color: #e50914;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.signup-redirect:hover {
+  text-decoration: underline;
+}
+
+/* Estilos para la alerta */
+/* signin.css */
+
+/* Estilos para el navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #141414; /* Fondo oscuro similar al de Netflix */
+  color: white;
+  position: fixed; /* Fija el navbar en la parte superior */
+  top: 0;
+  width: 100%; /* Asegura que el navbar ocupe todo el ancho */
+  z-index: 1000; /* Asegura que el navbar esté por encima de otros elementos */
+}
+
+.fixed-alert {
+  position: fixed;
+  top: 60px; /* Ajusta este valor según el tamaño de tu navbar */
+  left: 50%; /* Posiciona el elemento en el centro horizontal */
+  transform: translateX(-50%); /* Ajusta el elemento para que esté centrado */
+  z-index: 1050; /* Asegúrate de que esté por encima de otros elementos */
+  width: 300px; /* Ajusta el ancho según sea necesario */
+  background-color: #E50914; /* Fondo rojo al estilo de Netflix */
+  border-radius: 8px; /* Bordes redondeados más pronunciados */
+  padding: 20px; /* Espaciado interno */
+  color: #fff; /* Texto en blanco para contraste */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Sombra más intensa */
+  display: flex;
+  align-items: center; /* Alinea el contenido verticalmente */
+}
+
+.fixed-alert .alert-icon {
+  margin-right: 15px; /* Espacio entre el ícono y el texto */
+  font-size: 24px; /* Tamaño del ícono */
+}
+
+.fixed-alert .alert-text {
+  flex: 1; /* Ocupa el espacio disponible */
+  font-size: 16px; /* Tamaño del texto */
+}
+
+.fixed-alert .close-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  margin-left: 15px;
+}
+
+.fixed-alert .close-btn:hover {
+  color: #d6d6d6; /* Color del botón al pasar el ratón */
+}
+

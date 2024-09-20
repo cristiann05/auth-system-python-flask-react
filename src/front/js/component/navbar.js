@@ -1,19 +1,28 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { useNavigate } from 'react-router-dom'; // Importamos useNavigate
+import '../../styles/navbar.css';
 
 export const Navbar = () => {
-	return (
-		<nav className="navbar navbar-light bg-light">
-			<div className="container">
-				<Link to="/">
-					<span className="navbar-brand mb-0 h1">React Boilerplate</span>
-				</Link>
-				<div className="ml-auto">
-					<Link to="/demo">
-						<button className="btn btn-primary">Check the Context in action</button>
-					</Link>
-				</div>
-			</div>
-		</nav>
-	);
+  const navigate = useNavigate(); // Creamos una instancia del hook useNavigate
+
+  const handleSignIn = () => {
+    navigate('/signin'); // Navega a la página de inicio de sesión cuando el botón se hace clic
+  };
+
+  return (
+    <div className="navbar">
+      <div className="navbar__logo">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Logonetflix.png"
+          alt="Netflix Logo"
+          onClick={() => navigate('/')} // Navega a la página principal cuando el logo se hace clic
+        />
+      </div>
+      <div className="navbar__links">
+        <div className="navbar__link" onClick={handleSignIn}>
+          Sign In
+        </div>
+      </div>
+    </div>
+  );
 };

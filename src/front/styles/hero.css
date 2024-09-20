@@ -1,0 +1,105 @@
+/* Estilo para la sección principal (hero) */
+.hero {
+  width: 100%;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.6)
+    ),
+    url('https://assets.nflxext.com/ffe/siteui/vlv3/a1dc92ca-091d-4ca9-a05b-8cd44bbfce6a/f9368347-e982-4856-a5a4-396796381f28/RS-en-20191230-popsignuptwoweeks-perspective_alpha_website_large.jpg');
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 0 20px; /* Padding para asegurar espacio en pantallas pequeñas */
+}
+
+/* Título principal */
+.hero__title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  line-height: 1.2;
+  max-width: 700px;
+  margin: 0 auto; /* Centra el título en pantallas grandes */
+}
+
+/* Subtítulo */
+.hero__subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  max-width: 700px;
+  margin: 0 auto; /* Centra el subtítulo en pantallas grandes */
+}
+
+/* Contenedor del formulario */
+.hero__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+  margin-top: 30px; /* Separación adicional desde el título/subtítulo */
+  margin: 0 auto; /* Centra el formulario en pantallas grandes */
+  padding: 0 20px; /* Padding para asegurar espacio en pantallas pequeñas */
+}
+
+/* Input del formulario */
+.hero__form input {
+  width: 100%;
+  padding: 15px;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  box-sizing: border-box; /* Asegura que el padding no afecte al tamaño del elemento */
+}
+
+/* Botón del formulario */
+.hero__form button {
+  background-color: #e50914;
+  color: white;
+  font-size: 1.5rem;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  max-width: 200px;
+  text-transform: uppercase;
+  transition: background-color 0.3s;
+}
+
+/* Efecto hover del botón */
+.hero__form button:hover {
+  background-color: #f40612;
+}
+
+/* Texto debajo del formulario */
+.hero__text {
+  font-size: 1.2rem;
+  margin-top: 30px; /* Aumenta el margen superior para separación */
+  max-width: 600px;
+  margin: 0 auto; /* Centra el texto en pantallas grandes */
+  padding: 0 20px; /* Padding para asegurar espacio en pantallas pequeñas */
+}
+
+/* Responsive para pantallas más pequeñas */
+@media (max-width: 768px) {
+  .hero__title {
+    font-size: 2rem;
+  }
+
+  .hero__subtitle {
+    font-size: 1.2rem;
+  }
+
+  .hero__form button {
+    font-size: 1.2rem;
+  }
+}
