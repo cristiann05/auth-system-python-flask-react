@@ -26,7 +26,6 @@ img {
 .netflixLogo img {
   max-width: 250%;
   margin-bottom: 20px;
-
 }
 
 h1 {
@@ -59,7 +58,6 @@ header {
   width: 100px;
   max-height: 100%;
   padding-left: 30px;
-  padding-top: 0px;  
 }
 
 .netflixLogo img {  
@@ -89,10 +87,11 @@ header {
   color: var(--dark);
 }
 
+/* Profile icon and menu */
 .sub-nav {
   grid-area: sb;
   padding: 0 40px 0 40px;
-  position: relative; /* Necesario para el dropdown */
+  position: relative;
 }
 
 .sub-nav .profile-icon {
@@ -111,13 +110,13 @@ header {
   display: none;
   background-color: var(--primary);
   position: absolute;
-  top: 50px; /* Ajustado para estar más cerca del icono */
+  top: 50px;
   right: 0;
   z-index: 1000;
-  min-width: 150px; /* Aumentado para hacer el menú más grande */
+  min-width: 150px;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Añade una sombra para destacar el menú */
-  padding: 10px 0; /* Añade padding para los items del menú */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  padding: 10px 0;
 }
 
 .sub-nav .profile-menu.show {
@@ -127,7 +126,7 @@ header {
 .sub-nav .profile-menu a,
 .sub-nav .profile-menu button {
   color: var(--light);
-  padding: 10px 15px; /* Ajustado para un mejor tamaño */
+  padding: 10px 15px;
   text-decoration: none;
   display: block;
   border: none;
@@ -156,9 +155,6 @@ header {
 }
 
 .box a:hover {
-  transition: transform .3s;
-  -ms-transform: scale(1.4);
-  -webkit-transform: scale(1.4);  
   transform: scale(1.4);
 }
 
@@ -208,164 +204,110 @@ footer {
 /* MEDIA QUERIES */
 @media(max-width: 900px) {
   header {
-      display: grid;
-      grid-gap: 20px;
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-areas: 
-          "nt nt nt . . . sb . . . ."
-          "mn mn mn mn mn mn mn mn mn mn";
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: 
+      "nt nt sb"
+      "mn mn mn";
   }
 
   .box {
-      display: grid;
-      grid-gap: 20px;
-      grid-template-columns: repeat(4, minmax(100px, 1fr));
+    grid-template-columns: repeat(4, minmax(100px, 1fr));
   }
 }
 
 @media(max-width: 700px) {
-  header {
-      display: grid;
-      grid-gap: 20px;
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-areas: 
-          "nt nt nt . . . sb . . . ."
-          "mn mn mn mn mn mn mn mn mn mn";
-  }
-
   .box {
-      display: grid;
-      grid-gap: 20px;
-      grid-template-columns: repeat(3, minmax(100px, 1fr));
+    grid-template-columns: repeat(3, minmax(100px, 1fr));
   }
 
   .sub-links ul {
-      display: grid;
-      grid-gap: 20px;
-      grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @media(max-width: 500px) {
   .wrapper {
-      font-size: 15px;
+    font-size: 15px;
   }
 
   header {
-      margin: 0;
-      padding: 20px 0 0 0;
-      position: static;
-      display: grid;
-      grid-gap: 20px;
-      grid-template-columns: repeat(1, 1fr);
-      grid-template-areas: 
-          "nt"    
-          "mn"
-          "sb";
-      text-align: center;
-  }
-
-  .netflixLogo {
-      max-width: 100%;
-      margin: auto;
-      padding-right: 20px;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-areas: 
+      "nt"    
+      "mn"
+      "sb";
+    text-align: center;
   }
 
   .main-nav {
-      display: grid;
-      grid-gap: 0px;
-      grid-template-columns: repeat(1, 1fr);
-      text-align: center;
-  }
-
-  h1 {
-      text-align: center;
-      font-size: 18px;
+    grid-template-columns: repeat(1, 1fr);
+    text-align: center;
   }
 
   .box {
-      display: grid;
-      grid-gap: 20px;
-      grid-template-columns: repeat(1, 1fr);
-      text-align: center;    
-  }
-
-  .box a:hover {
-      transition: transform .3s;
-      -ms-transform: scale(1);
-      -webkit-transform: scale(1);  
-      transform: scale(1.2);
+    grid-template-columns: repeat(1, 1fr);
   }
 
   .logos {
-      display: grid;
-      grid-gap: 20px;
-      grid-template-columns: repeat(2, 1fr);
-      text-align: center;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .sub-links ul {
-      display: grid;
-      grid-gap: 20px;
-      grid-template-columns: repeat(1, 1fr);
-      text-align: center;
-      font-size: 15px;
+    grid-template-columns: repeat(1, 1fr);
+    text-align: center;
+    font-size: 15px;
   }
 }
 
-/* Estilo para el dropdown de perfil */
-.profile-icon {
-  position: relative; /* Necesario para posicionar el dropdown en relación con este contenedor */
-}
-
+/* Dropdown profile menu */
 .dropdown {
-  position: relative; /* Asegura que el dropdown se posicione correctamente respecto al botón */
+  position: relative;
 }
 
 .dropdown-toggle {
-  background: none; /* Elimina el fondo del botón para que solo se vea la imagen */
-  border: none; /* Elimina el borde del botón */
-  padding: 0; /* Elimina el relleno del botón */
-  cursor: pointer; /* Cambia el cursor para indicar que es clicable */
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
 }
 
 .dropdown-toggle img {
-  border-radius: 4px; /* Redondeo mínimo para una apariencia cuadrada con bordes suaves */
-  width: 40px; /* Ajusta el tamaño de la imagen */
-  height: 40px; /* Ajusta el tamaño de la imagen */
-  object-fit: cover; /* Asegura que la imagen se ajuste correctamente */
+  border-radius: 4px;
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
 }
 
 .dropdown-menu {
-  min-width: 150px; /* Ajusta el ancho según sea necesario */
-  background-color: #333; /* Fondo oscuro para mejor contraste */
-  border-radius: 6px; /* Bordes redondeados para un diseño más moderno */
-  border: 1px solid #444; /* Borde sutil para definir el área del menú */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra para dar efecto de elevación */
+  min-width: 150px;
+  background-color: #333;
+  border-radius: 6px;
+  border: 1px solid #444;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   position: absolute;
-  top: 50px; /* Ajusta este valor para posicionar el menú debajo del botón */
-  right: 0; /* Alineado a la derecha del contenedor */
-  z-index: 1000; /* Asegura que el menú esté por encima de otros elementos */
-  transform: translateY(10px); /* Ajusta la posición vertical si es necesario */
+  top: 50px;
+  right: 0;
+  z-index: 1000;
+  transform: translateY(10px);
 }
 
 .dropdown-item {
-  color: #fff; /* Color del texto blanco para contraste */
-  padding: 10px 20px; /* Espaciado interno */
-  text-decoration: none; /* Elimina subrayado de enlaces */
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
 }
 
 .dropdown-item:hover {
-  background-color: #e50914; /* Color de fondo en hover, similar a Netflix */
+  background-color: #e50914;
 }
 
 .dropdown-item.logout {
-  color: #e50914; /* Color del texto para "Cerrar sesión" */
-  font-weight: bold; /* Hacer el texto en negrita */
-  cursor: pointer; /* Cambia el cursor para indicar que es clicable */
+  color: #e50914;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 .dropdown-item.logout:hover {
-  background-color: #fff; /* Fondo blanco para el elemento en hover */
-  color: #e50914; /* Color del texto en hover */
+  background-color: #fff;
+  color: #e50914;
 }

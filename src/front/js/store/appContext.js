@@ -1,4 +1,3 @@
-// src/context/appContext.js
 import React, { useState, useEffect } from "react";
 import getState from "./flux.js";
 
@@ -23,7 +22,7 @@ const injectContext = PassedComponent => {
             if (state.actions && typeof state.actions.checkAuth === 'function') {
                 state.actions.checkAuth();
             }
-        }, []); // Dependencia vacía, se ejecuta solo una vez después del montaje
+        }, []);
 
         return (
             <Context.Provider value={state}>

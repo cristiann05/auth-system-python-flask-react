@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../styles/footer.css'; // Asegúrate de que la ruta sea correcta
+import '../../styles/footer.css';
 
 export const Footer = () => {
   return (
@@ -34,7 +34,6 @@ export const Footer = () => {
             <option>Spanish</option>
             <option>French</option>
             <option>German</option>
-            {/* Agrega más opciones de idioma si lo deseas */}
           </select>
           <p>© {new Date().getFullYear()} Netflix, Inc.</p>
         </div>

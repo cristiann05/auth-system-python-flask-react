@@ -1,4 +1,4 @@
-/* Estilo para la sección principal (hero) */
+/* Sección principal (hero) con fondo y centrado del contenido */
 .hero {
   width: 100%;
   min-height: 100vh;
@@ -15,7 +15,7 @@
   justify-content: center;
   text-align: center;
   color: white;
-  padding: 0 20px; /* Padding para asegurar espacio en pantallas pequeñas */
+  padding: 0 20px;
 }
 
 /* Título principal */
@@ -25,7 +25,7 @@
   margin-bottom: 20px;
   line-height: 1.2;
   max-width: 700px;
-  margin: 0 auto; /* Centra el título en pantallas grandes */
+  margin: 0 auto;
 }
 
 /* Subtítulo */
@@ -33,7 +33,7 @@
   font-size: 1.5rem;
   margin-bottom: 30px;
   max-width: 700px;
-  margin: 0 auto; /* Centra el subtítulo en pantallas grandes */
+  margin: 0 auto;
 }
 
 /* Contenedor del formulario */
@@ -43,9 +43,9 @@
   align-items: center;
   width: 100%;
   max-width: 600px;
-  margin-top: 30px; /* Separación adicional desde el título/subtítulo */
-  margin: 0 auto; /* Centra el formulario en pantallas grandes */
-  padding: 0 20px; /* Padding para asegurar espacio en pantallas pequeñas */
+  margin-top: 30px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 /* Input del formulario */
@@ -57,7 +57,7 @@
   border-radius: 5px;
   border: none;
   outline: none;
-  box-sizing: border-box; /* Asegura que el padding no afecte al tamaño del elemento */
+  box-sizing: border-box;
 }
 
 /* Botón del formulario */
@@ -83,13 +83,13 @@
 /* Texto debajo del formulario */
 .hero__text {
   font-size: 1.2rem;
-  margin-top: 30px; /* Aumenta el margen superior para separación */
+  margin-top: 30px;
   max-width: 600px;
-  margin: 0 auto; /* Centra el texto en pantallas grandes */
-  padding: 0 20px; /* Padding para asegurar espacio en pantallas pequeñas */
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-/* Responsive para pantallas más pequeñas */
+/* Estilos responsive para pantallas pequeñas */
 @media (max-width: 768px) {
   .hero__title {
     font-size: 2rem;
