@@ -12,14 +12,14 @@ export const Signin = () => {
     const { actions, store } = useContext(Context);
 
     useEffect(() => {
-        if (store.user) {
+        if (store.login) {
             setShowAlert(true);
             setTimeout(() => {
                 setShowAlert(false);
                 navigate('/homepage');
             }, 1000);
         }
-    }, [store.user, navigate]);
+    }, [store.login, navigate]);
 
     const handleSubmit = async (e) => {
         e.preventDefault();

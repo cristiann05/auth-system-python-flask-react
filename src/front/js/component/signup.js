@@ -11,6 +11,7 @@ export const Signup = () => {
     const [passwordVisible, setPasswordVisible] = useState(false);
     const [confirmPasswordVisible, setConfirmPasswordVisible] = useState(false);
     const [errorMessage, setErrorMessage] = useState('');
+    const [successMessage, setSuccessMessage] = useState(''); // Nuevo estado para el mensaje de éxito
     const navigate = useNavigate();
     const { actions, store } = useContext(Context);
 
@@ -32,17 +33,22 @@ export const Signup = () => {
         }
 
         try {
+            // Llama a la acción signup desde el store
             await actions.signup(email, password);
             
             if (!store.error) {
-                // Redirige al usuario a la página de inicio de sesión al registrarse con éxito
-                setErrorMessage(''); // Limpiar errores
-                navigate('/signin');
+                setErrorMessage(''); // Limpia el mensaje de error
+                setSuccessMessage('Usuario creado exitosamente'); // Muestra el mensaje de éxito
+                
+                // Opcional: Redirigir después de unos segundos
+                setTimeout(() => {
+                    navigate('/signin'); // Redirige al usuario a la página de inicio de sesión después de 2 segundos
+                }, 2000);
             } else {
                 setErrorMessage(store.error || 'Sign Up failed');
             }
         } catch (error) {
-            setErrorMessage(store.error || 'An unexpected error occurred. Please try again.');
+            setErrorMessage('An unexpected error occurred. Please try again.');
         }
     };
 
@@ -95,6 +101,10 @@ export const Signup = () => {
                     </div>
                     <button type="submit">Sign Up</button>
 
+                    {/* Mensaje de éxito */}
+                    {successMessage && <p className="success-message">{successMessage}</p>}
+
+                    {/* Mensaje de error */}
                     {errorMessage && <p className="error-message">{errorMessage}</p>}
                 </form>
                 <p className="signin-link">

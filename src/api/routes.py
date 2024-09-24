@@ -34,7 +34,7 @@ def signup():
     db.session.add(new_user)
     db.session.commit()
 
-    return jsonify({"msg": "User created"}), 201
+    return jsonify({"msg": "User created"}), 200
 
 @api.route('/login', methods=['POST'])
 def login():
