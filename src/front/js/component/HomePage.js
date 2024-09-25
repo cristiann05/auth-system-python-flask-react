@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Context } from '../store/appContext';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -7,11 +7,27 @@ import '../../styles/homepage.css';
 const HomePage = () => {
     const { actions } = useContext(Context);
     const navigate = useNavigate();
+    const [loading, setLoading] = useState(true); // Para mostrar algo mientras se verifica el token
+
+    useEffect(() => {
+        // Verificar si el usuario está autenticado
+        const token = localStorage.getItem("token");
+        if (!token) {
+            navigate('/');  // Redirige a la página principal si no hay token
+        } else {
+            setLoading(false); // Cuando se verifica el token, deja de cargar
+        }
+    }, [navigate]);
 
     const handleLogout = () => {
         actions.logout(); // Llama a la función de logout desde el contexto
         navigate('/'); // Redirige a la página principal después de cerrar sesión
     };
+
+    // Si está cargando (verificando el token), muestra algo para evitar la pantalla en negro
+    if (loading) {
+        return <div>Loading...</div>;
+    }
 
     return (
         <div className="wrapper">
